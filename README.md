@@ -20,6 +20,38 @@ Synthesis requires three files as follows,
 
 ◦ SDC (Synopsis Design Constraint) File (.sdc)
 
+Creating Source Code:
+
+Verilog code:
+
+'timescale 1ns / 1 ns
+
+module counter(clk,m, rst,count);
+
+input clk,m,rst;
+output reg [3:0] count; 
+
+always@(posedge elk or negedge rst) 
+
+begin
+if (!rst)
+
+count=O; 
+
+else if(m)
+
+count=count+ 1; 
+
+else 
+
+count=count-1;
+
+end
+
+endmodule
+
+Creating Test bench:
+
  ### Step 2 : Creating an SDC File
 
 •	In your terminal type “gedit input_constraints.sdc” to create an SDC File if you do not have one.
@@ -64,12 +96,16 @@ used.
 • Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist.
 
 #### Synthesis RTL Schematic :
+![Screenshot 2024-11-23 154421](https://github.com/user-attachments/assets/785841f0-050b-48b1-b241-b9802cd47bee)
 
 #### Area report:
+![Screenshot 2024-11-23 154458](https://github.com/user-attachments/assets/5d6901d1-e4bf-478d-ac5a-10e3f7169b51)
 
 #### Power Report:
+![Screenshot 2024-11-23 154512](https://github.com/user-attachments/assets/86924dcd-a043-4a51-b2d7-2d550ba40011)
 
 #### Timing Report: 
+![Screenshot 2024-11-23 154533](https://github.com/user-attachments/assets/c66afb10-03b5-4719-9d53-97f0344c84aa)
 
 #### Result: 
 
